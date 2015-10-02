@@ -1,6 +1,6 @@
 {
   "name": "big-email",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simplified email handler for ejs+juice+postmark+firebase stack",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,11 @@
     "postmark",
     "firebase"
   ],
-  "author": "Murray Smith <murray@mismith.info> (http://mismith.info)",
+  "author": {
+    "name": "Murray Smith",
+    "email": "murray@mismith.info",
+    "url": "http://mismith.info"
+  },
   "bugs": {
     "url": "https://github.com/mismith/big-email/issues"
   },

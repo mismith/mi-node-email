@@ -3,11 +3,12 @@
 (function() {
 'use strict';
 
-var Q = require('q'),
-	_ = require('lodash');
+var Q        = require('q'),
+	_        = require('lodash'),
+	Postmark = require('postmark');
 		
 module.exports = function (postmarkToken, options) {
-	var postmark = new require('postmark').Client(postmarkToken);
+	var postmark = new Postmark.Client(postmarkToken);
 	options = _.extend({
 		templatePath: 'html/emails/',
 		juice: {
