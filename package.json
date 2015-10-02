@@ -1,0 +1,33 @@
+{
+  "name": "big-email",
+  "version": "0.1.0",
+  "description": "Simplified email handler for ejs+juice+postmark+firebase stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mismith/big-email.git"
+  },
+  "keywords": [
+    "email",
+    "ejs",
+    "juice",
+    "postmark",
+    "firebase"
+  ],
+  "author": "Murray Smith <murray@mismith.info> (http://mismith.info)",
+  "bugs": {
+    "url": "https://github.com/mismith/big-email/issues"
+  },
+  "homepage": "https://github.com/mismith/big-email#readme",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "fs": "0.0.2",
+    "juice": "^1.5.0",
+    "lodash": "^3.10.1",
+    "postmark": "^1.2.1",
+    "q": "^1.4.1"
+  }
+}
