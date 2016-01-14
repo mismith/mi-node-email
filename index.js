@@ -11,6 +11,7 @@ module.exports = function (postmarkToken, options) {
 	var postmark = new Postmark.Client(postmarkToken);
 	options = _.extend({
 		templatePath: 'html/emails/',
+		templateExtension: 'html',
 		juice: {
 			webResources: {
 				relativeTo: 'html/',
@@ -21,12 +22,13 @@ module.exports = function (postmarkToken, options) {
 	
 	return {
 		getCompiledTemplate: function getCompiledTemplate(templateId, ejsOptions) {
-			var deferred = Q.defer();
+			var deferred = Q.defer(),
+				filename = options.templatePath.replace(/\/*$/, '/') + templateId + '.' + options.templateExtension;
 			
-			ejsOptions = _.extend(options.ejs || {}, ejsOptions || {});
+			ejsOptions = _.extend(options.ejs || {}, {filename: filename}, ejsOptions || {});
 			
 			// read template
-			require('fs').readFile(options.templatePath.replace(/\/*$/, '/') + templateId + '.html', function (err, file) {
+			require('fs').readFile(filename, function (err, file) {
 				if (err) return deferred.reject(err);
 				
 				// compile it
